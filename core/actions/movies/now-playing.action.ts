@@ -2,7 +2,8 @@
 // Funcion para traer las peliculas
 
 import { movieApi } from "@/core/api/movie-api";
-import { MovieDBMoviesResponse } from "@/infrastructure/moviedb-response";
+import { MovieDBMoviesResponse } from "@/infrastructure/interfaces/moviedb-response";
+import { MovieMapper } from "@/infrastructure/mappers/movie.mapper";
 
 export const nowPlagingAction = async () => {
 
@@ -10,12 +11,14 @@ export const nowPlagingAction = async () => {
 
         const { data } = await movieApi.get<MovieDBMoviesResponse>('/now_playing');
 
-        console.log(data);
+        //const movies = data.results.map((movie) => MovieMapper.fromTheMovieDBToMovie(movie) )
+        const movies = data.results.map(MovieMapper.fromTheMovieDBToMovie)
 
-        return [];
+
+        return movies;
         
     } catch (error) {
         console.log(error);
         throw 'Cannot load now playing movies';
     }
-}
+} 
