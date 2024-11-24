@@ -1,6 +1,6 @@
 # Movie app 👋
 
-## Instalaciones:
+## TanStack - React-query Instalacion:
 
 - Documentacion: https://tanstack.com
 
@@ -35,3 +35,9 @@ const RootLayout = () => {
 export default RootLayout;
 
 ```
+
+## Carousel Images
+
+- Documentacion: https://www.npmjs.com/package/react-native-reanimated-carousel
+
+`yarn add react-native-reanimated-carousel`
