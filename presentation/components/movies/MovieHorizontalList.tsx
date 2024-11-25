@@ -6,11 +6,12 @@ import MoviePoster from './MoviePoster';
 interface Props {
     title: string;
     movie: Movie[];
+    className?: string;
 }
 
-const MovieHorizontalList = ({ title, movie }: Props) => {
+const MovieHorizontalList = ({ title, movie, className }: Props) => {
     return (
-        <View className='mt-5'>
+        <View className={`${ className }`}>
             {
                 title && (<Text className='text-3xl font-bold px-4 mb-2'>{title}</Text>)
             }
