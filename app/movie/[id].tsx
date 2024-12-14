@@ -1,10 +1,16 @@
+import { CompleteMovie } from '@/infrastructure/interfaces/movie.interface';
+import MovieDescription from '@/presentation/components/movie/MovieDescription';
 import MovieHeader from '@/presentation/components/movie/MovieHeader';
 import { useMovie } from '@/presentation/hooks/useMovie';
 import { useLocalSearchParams } from 'expo-router';
 import React from 'react'
 import { View, Text, ActivityIndicator, ScrollView } from 'react-native';
 
-const MovieScreen = () => {
+interface Props {
+    movie: CompleteMovie;
+}
+
+const MovieScreen = ({ movie }: Props) => {
 
     const { id } = useLocalSearchParams();
     const { movieQuery } = useMovie( +id );
@@ -28,6 +34,7 @@ const MovieScreen = () => {
                 poster={ movieQuery.data.poster }
                 title={ movieQuery.data.title }
             />
+            <MovieDescription movie={ movieQuery.data } />
         </ScrollView>
     )
 }
