@@ -41,3 +41,10 @@ export default RootLayout;
 - Documentacion: https://www.npmjs.com/package/react-native-reanimated-carousel
 
 `yarn add react-native-reanimated-carousel`
+
+## Gradiente
+
+- Documentacion: https://docs.expo.dev/versions/latest/sdk/linear-gradient/
+
+  `yarn add expo-linear-gradient`
+  
