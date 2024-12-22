@@ -31,6 +31,6 @@ export class MovieMapper {
             genres: movie.genres.map(g => g.name),
             originalTitle: movie.original_title,
             productionCompanies: movie.production_companies.map(p => p.name),
-        }
-    }
+        };
+    };
 }
